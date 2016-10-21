@@ -26,7 +26,7 @@ class CheckAroundTableVewControllerTableViewController: UITableViewController {
         
         FIRAuth.auth()?.addStateDidChangeListener({ (auth:FIRAuth, user:FIRUser?) in
             if let user = user{
-                print("Welcome")
+                print("Welcome: " + user.email!)
                 self.startObservingDB()
             }
             else{
