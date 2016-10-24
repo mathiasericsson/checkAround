@@ -9,18 +9,27 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+import CoreLocation
  
-class CheckAroundTableVewControllerTableViewController: UITableViewController {
+class CheckAroundTableVewControllerTableViewController: UITableViewController, CLLocationManagerDelegate{
 
     var dbRef:FIRDatabaseReference!
     var sweets = [Sweet]()
+    var locationManager:CLLocationManager?
+    var currentLocation:CLLocation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dbRef = FIRDatabase.database().reference().child("sweet-items") //Structure data in JSON hirarchy
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager?.requestWhenInUseAuthorization()
+        locationManager?.startUpdatingLocation()
+        
+        dbRef = FIRDatabase.database().reference().child("messages") //Structure data in JSON hirarchy
         startObservingDB()
     }
-    
+  
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -33,6 +42,15 @@ class CheckAroundTableVewControllerTableViewController: UITableViewController {
                 print("You need to sign in first")
             }
         })
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.currentLocation = locations[0]
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
     }
     
 
@@ -51,6 +69,7 @@ class CheckAroundTableVewControllerTableViewController: UITableViewController {
         })
     }
 
+    //Function to add Sweet
     @IBAction func addSweet(_ sender: AnyObject) {
 
         
@@ -65,7 +84,14 @@ class CheckAroundTableVewControllerTableViewController: UITableViewController {
                 
                 let userName = FIRAuth.auth()?.currentUser?.email
                 
-                let sweet = Sweet(content: sweetContent, addedByUser: userName!)
+                
+                let longitude:Double = (self.currentLocation?.coordinate.longitude)!
+                let latitude:Double = (self.currentLocation?.coordinate.latitude)!
+
+                let position = [longitude, latitude]
+     
+                //Save Sweet-item
+                let sweet = Sweet(content: sweetContent, addedByUser: userName!, position: position)
                 let sweetRef = self.dbRef.child(sweetContent.lowercased())
                 sweetRef.setValue(sweet.toAnyOpbject())
             }
@@ -129,7 +155,7 @@ class CheckAroundTableVewControllerTableViewController: UITableViewController {
         let sweet = sweets[indexPath.row]
         cell.textLabel?.text = sweet.content
         cell.detailTextLabel?.text = sweet.addedByUser
-
+    
         return cell
     }
 
@@ -141,7 +167,6 @@ class CheckAroundTableVewControllerTableViewController: UITableViewController {
             self.tableView.reloadData()
         }
     }
-    
 
    
 }
