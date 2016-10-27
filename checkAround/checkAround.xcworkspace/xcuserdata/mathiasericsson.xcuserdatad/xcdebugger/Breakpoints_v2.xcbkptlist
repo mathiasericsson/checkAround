@@ -10,12 +10,138 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "checkAround/CheckAroundTableVewControllerTableViewController.swift"
-            timestampString = "498984405.725999"
+            timestampString = "499264136.458163"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
             landmarkName = "addSweet(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "checkAround.CheckAroundTableVewControllerTableViewController.addSweet (Swift.AnyObject) -&gt; ()"
+                  moduleName = "checkAround"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mathiasericsson/Documents/checkAround/checkAround/checkAround/CheckAroundTableVewControllerTableViewController.swift"
+                  timestampString = "499264060.147715"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "137"
+                  endingLineNumber = "137"
+                  offsetFromSymbolStart = "204">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "checkAround.CheckAroundTableVewControllerTableViewController.(addSweet (Swift.AnyObject) -&gt; ()).(closure #1)"
+                  moduleName = "checkAround"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mathiasericsson/Documents/checkAround/checkAround/checkAround/CheckAroundTableVewControllerTableViewController.swift"
+                  timestampString = "499264060.149772"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "138"
+                  endingLineNumber = "138"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "checkAround/CheckAroundTableVewControllerTableViewController.swift"
+            timestampString = "499264136.458163"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "addSweet(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "checkAround-Bridging-Header.h"
+            timestampString = "499068724.369329"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "checkAround/CheckAroundTableVewControllerTableViewController.swift"
+            timestampString = "499262042.065691"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "locationManager(_:didUpdateLocations:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "checkAround.CheckAroundTableVewControllerTableViewController.locationManager (__ObjC.CLLocationManager, didUpdateLocations : Swift.Array&lt;__ObjC.CLLocation&gt;) -&gt; ()"
+                  moduleName = "checkAround"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mathiasericsson/Documents/checkAround/checkAround/checkAround/CheckAroundTableVewControllerTableViewController.swift"
+                  timestampString = "499262042.39183"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "353">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "checkAround.CheckAroundTableVewControllerTableViewController.(locationManager (__ObjC.CLLocationManager, didUpdateLocations : Swift.Array&lt;__ObjC.CLLocation&gt;) -&gt; ()).(closure #1)"
+                  moduleName = "checkAround"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mathiasericsson/Documents/checkAround/checkAround/checkAround/CheckAroundTableVewControllerTableViewController.swift"
+                  timestampString = "499262042.393138"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "65">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "checkAround/CheckAroundTableVewControllerTableViewController.swift"
+            timestampString = "499264136.458163"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "startObservingDB()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +152,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "checkAround/CheckAroundTableVewControllerTableViewController.swift"
-            timestampString = "498984405.725999"
+            timestampString = "499264136.458163"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "addSweet(_:)"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "startObservingDB()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

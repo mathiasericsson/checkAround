@@ -50,7 +50,6 @@ struct Sweet{
         let snapshotPosition = snapshot.value as? NSDictionary
         
         
-        //TODO: Fix so this accepts an array
         if let sweetPosition = snapshotPosition!["position"] as? Array<Double>{
             position = sweetPosition
         }else{
@@ -58,7 +57,7 @@ struct Sweet{
         }
         
     }
-    
+
     func toAnyOpbject() -> [AnyHashable:Any]{
         
         return ["content":content, "addedByUser":addedByUser, "position":position] as [AnyHashable:Any]
