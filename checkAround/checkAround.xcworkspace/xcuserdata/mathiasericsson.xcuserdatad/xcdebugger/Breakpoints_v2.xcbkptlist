@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "checkAround/CheckAroundTableVewControllerTableViewController.swift"
-            timestampString = "499264136.458163"
+            timestampString = "499270311.431167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "addSweet(_:)"
             landmarkType = "7">
             <Locations>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "checkAround/CheckAroundTableVewControllerTableViewController.swift"
-            timestampString = "499264136.458163"
+            timestampString = "499270311.431167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "addSweet(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -88,7 +88,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "checkAround/CheckAroundTableVewControllerTableViewController.swift"
-            timestampString = "499262042.065691"
+            timestampString = "499268564.260863"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
@@ -136,7 +136,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "checkAround/CheckAroundTableVewControllerTableViewController.swift"
-            timestampString = "499264136.458163"
+            timestampString = "499270311.431167"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "startObservingDB()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "checkAround/CheckAroundTableVewControllerTableViewController.swift"
+            timestampString = "499270311.431167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "112"
@@ -152,12 +168,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "checkAround/CheckAroundTableVewControllerTableViewController.swift"
-            timestampString = "499264136.458163"
+            timestampString = "499270311.431167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "startObservingDB()"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "locationManager(_:didUpdateLocations:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

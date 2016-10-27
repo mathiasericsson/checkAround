@@ -81,9 +81,10 @@ class CheckAroundTableVewControllerTableViewController: UITableViewController, C
                 let sweetObject = Sweet(snapshot:snapshot)
                 
                 let results = self.sweets.filter { $0.key == sweetObject.key }
-                
+               
                 if(results.isEmpty){
                     self.sweets.append(sweetObject)
+
                 }
             })
             
@@ -114,10 +115,8 @@ class CheckAroundTableVewControllerTableViewController: UITableViewController, C
                 
                 if(results.isEmpty){
                     self.sweets.append(sweetObject)
+                    
                 }
-
-                /*let sweetObject = Sweet(snapshot: sweet as! FIRDataSnapshot)
-                newSweets.append(sweetObject)*/
             }
         
             self.tableView.reloadData()
@@ -136,7 +135,8 @@ class CheckAroundTableVewControllerTableViewController: UITableViewController, C
             textField.placeholder = "Your Sweet"
         }
         sweetAlert.addAction(UIAlertAction(title: "Send", style: .default, handler: { (action:UIAlertAction) in
-            if let sweetContent = sweetAlert.textFields?.first?.text{
+            
+             if let sweetContent = sweetAlert.textFields?.first?.text{
                 
                 let userName = FIRAuth.auth()?.currentUser?.email
                 
@@ -147,10 +147,13 @@ class CheckAroundTableVewControllerTableViewController: UITableViewController, C
                 let currentPosition = [longitude, latitude]
      
                 //Save Sweet-item
-                let sweet = Sweet(content: sweetContent, addedByUser: userName!, position: currentPosition)
                 let sweetRef = self.dbRef.childByAutoId()
+            
+                let sweet = Sweet(key: sweetRef.key, content: sweetContent, addedByUser: userName!, position: currentPosition)
                 sweetRef.setValue(sweet.toAnyOpbject())
+               
                 self.sweets.append(sweet)
+                
                 self.tableView.reloadData()
                 self.geoFire?.setLocation(CLLocation(latitude: latitude, longitude: longitude), forKey: sweetRef.key)
                 

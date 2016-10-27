@@ -19,7 +19,7 @@ struct Sweet{
     let position:Array<Double>!
     let itemRef: FIRDatabaseReference?
     
-    init(content:String, addedByUser:String, key:String = "", position:Array<Double>){
+    init(key:String, content:String, addedByUser:String, position:Array<Double>){
         self.key = key
         self.content =  content
         self.addedByUser =  addedByUser
