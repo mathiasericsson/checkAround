@@ -11,6 +11,7 @@ import FirebaseDatabase
 import FirebaseAuth
 import CoreLocation
 
+ //To be able to compare Sweet objects
  extension Array {
     mutating func removeObject<U: Equatable>(Sweet: U) -> Bool {
         for (idx, objectToCompare) in self.enumerated() {
@@ -30,7 +31,6 @@ import CoreLocation
 class CheckAroundTableVewControllerTableViewController: UITableViewController, CLLocationManagerDelegate{
 
     var dbRef:FIRDatabaseReference!
-    //var dbUserRef:FIRDatabaseReference!
     var sweets = [Sweet]()
     var locationManager:CLLocationManager?
     var currentLocation:CLLocation?
@@ -47,20 +47,21 @@ class CheckAroundTableVewControllerTableViewController: UITableViewController, C
         locationManager?.startUpdatingLocation()
         
         dbRef = FIRDatabase.database().reference().child("messages")
-        //dbUserRef = FIRDatabase.database().reference().child("user_messages")
         geofireRef = FIRDatabase.database().reference().child("positions")
         geoFire = GeoFire(firebaseRef: geofireRef)
         
+        //TODO: Do something, like waiting screen when fetching GPS-position
         //startObservingDB()
     }
   
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        //Use only when creating information, for reading everyone can access
         FIRAuth.auth()?.addStateDidChangeListener({ (auth:FIRAuth, user:FIRUser?) in
             if let user = user{
                 print("Welcome: " + user.email!)
-                //self.startObservingDB()
+                //TODO: Update button to logout button
             }
             else{
                 print("You need to sign in first")
@@ -78,21 +79,22 @@ class CheckAroundTableVewControllerTableViewController: UITableViewController, C
             
             self.dbRef.child(key!).observe(.value, with: { (snapshot) in
                
-                let sweetObject = Sweet(snapshot:snapshot)
+                if(snapshot.hasChildren()){
+                    let sweetObject = Sweet(snapshot:snapshot)
                 
-                let results = self.sweets.filter { $0.key == sweetObject.key }
+                    let results = self.sweets.filter { $0.key == sweetObject.key }
                
-                if(results.isEmpty){
-                    self.sweets.append(sweetObject)
-
+                    if(results.isEmpty){
+                        self.sweets.append(sweetObject)
+                    }
                 }
             })
             
-        })
-        
-        circleQuery?.observe(.keyExited, with: { (key: String?, location: CLLocation?) in
-            
-            self.removeSweetFromArray(key: key)
+            //Seams to now work... maybe not a super big problem though? As it will clear someimes anyway.
+            circleQuery?.observe(.keyExited, with: { (key: String?, location: CLLocation?) in
+                
+                self.removeSweetFromArray(key: key)
+            })
         })
         
         self.tableView.reloadData()
@@ -225,11 +227,10 @@ class CheckAroundTableVewControllerTableViewController: UITableViewController, C
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             let sweet = sweets[indexPath.row]
-            print("hej") //TODO: FIGURE OUT WHATS WRONG AFTER THIS
             self.removeSweetFromArray(key: sweet.key)
-            sweet.itemRef?.removeValue()
             self.geoFire?.removeKey(sweet.key)
-       
+            sweet.itemRef?.removeValue()
+            self.tableView.reloadData()
         }
     }
     
