@@ -105,7 +105,7 @@ class CheckAroundTableVewControllerTableViewController: UITableViewController, C
         print(error)
     }
     
-
+/*THis was used when it was only a chat client, now we use GPS to check for when we get new items
    func startObservingDB(){
             dbRef.observe(.value, with: { (snapshot:FIRDataSnapshot) in
            
@@ -125,7 +125,7 @@ class CheckAroundTableVewControllerTableViewController: UITableViewController, C
             
         })
     }
-
+*/
     //Function to add Sweet
     @IBAction func addSweet(_ sender: AnyObject) {
 
@@ -136,28 +136,27 @@ class CheckAroundTableVewControllerTableViewController: UITableViewController, C
         sweetAlert.addTextField { (textField : UITextField!) -> Void in
             textField.placeholder = "Your Sweet"
         }
+        
         sweetAlert.addAction(UIAlertAction(title: "Send", style: .default, handler: { (action:UIAlertAction) in
             
              if let sweetContent = sweetAlert.textFields?.first?.text{
                 
                 let userName = FIRAuth.auth()?.currentUser?.email
                 
-                
                 let longitude:Double = (self.currentLocation?.coordinate.longitude)!
                 let latitude:Double = (self.currentLocation?.coordinate.latitude)!
 
-                let currentPosition = [longitude, latitude]
-     
                 //Save Sweet-item
                 let sweetRef = self.dbRef.childByAutoId()
             
-                let sweet = Sweet(key: sweetRef.key, content: sweetContent, addedByUser: userName!, position: currentPosition)
+                let sweet = Sweet(key: sweetRef.key, content: sweetContent, addedByUser: userName!)
                 sweetRef.setValue(sweet.toAnyOpbject())
-               
-                self.sweets.append(sweet)
                 
-                self.tableView.reloadData()
                 self.geoFire?.setLocation(CLLocation(latitude: latitude, longitude: longitude), forKey: sweetRef.key)
+                
+                self.sweets.append(sweet)
+                self.tableView.reloadData()
+                
                 
             }
         }))
@@ -223,7 +222,7 @@ class CheckAroundTableVewControllerTableViewController: UITableViewController, C
         return cell
     }
 
-    
+    //Delete item
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             let sweet = sweets[indexPath.row]

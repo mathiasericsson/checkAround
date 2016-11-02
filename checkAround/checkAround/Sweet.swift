@@ -16,15 +16,13 @@ struct Sweet{
     let key:String!
     let content:String!
     let addedByUser:String!
-    let position:Array<Double>!
     let itemRef: FIRDatabaseReference?
     
-    init(key:String, content:String, addedByUser:String, position:Array<Double>){
+    init(key:String, content:String, addedByUser:String){
         self.key = key
         self.content =  content
         self.addedByUser =  addedByUser
         self.itemRef = nil
-        self.position = position
 
     }
     init(snapshot:FIRDataSnapshot){
@@ -47,20 +45,12 @@ struct Sweet{
             addedByUser = ""
         }
         
-        let snapshotPosition = snapshot.value as? NSDictionary
-        
-        
-        if let sweetPosition = snapshotPosition!["position"] as? Array<Double>{
-            position = sweetPosition
-        }else{
-            position = [111,111]
-        }
         
     }
 
     func toAnyOpbject() -> [AnyHashable:Any]{
         
-        return ["content":content, "addedByUser":addedByUser, "position":position] as [AnyHashable:Any]
+        return ["content":content, "addedByUser":addedByUser] as [AnyHashable:Any]
         
     }
     
