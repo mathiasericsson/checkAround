@@ -43,7 +43,7 @@ class CheckAroundTableVewControllerTableViewController: UITableViewController, C
         locationManager?.delegate = self
         locationManager?.desiredAccuracy = kCLLocationAccuracyBest
         locationManager?.requestWhenInUseAuthorization()
-        locationManager?.distanceFilter = 5
+        //locationManager?.distanceFilter = 5
         locationManager?.startUpdatingLocation()
         
         dbRef = FIRDatabase.database().reference().child("messages")
