@@ -72,7 +72,7 @@ class CheckAroundTableVewControllerTableViewController: UITableViewController, C
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         self.currentLocation = locations[0]
-        let circleQuery = geoFire?.query(at: self.currentLocation, withRadius: 0.05) //0.6 = 600 m radius
+        let circleQuery = geoFire?.query(at: self.currentLocation, withRadius: 0.05) //0.05 = 50 m radius
         
         //If something enters the radius, fetch them from firebase and add them to table view
         circleQuery?.observe(.keyEntered, with: { (key: String?, location: CLLocation?) in
